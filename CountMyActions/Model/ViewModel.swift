@@ -33,11 +33,7 @@ class ViewModel: ObservableObject {
     private let poseExtractor = HumanBodyPoseExtractor()
     
     /// The camera configuration to define the basic camera position, pixel format, and resolution to use.
-    private var configuration = VideoReader.CameraConfiguration(
-        position: .front,
-        pixelFormat: .bgra32,
-        resolution: .high
-    )
+    private var configuration = VideoReader.CameraConfiguration()
     
     /// The counter to count action repetitions from a pose stream.
     private let actionCounter = ActionCounter()
@@ -67,16 +63,10 @@ class ViewModel: ObservableObject {
 
     /// Change the camera toggle positions.
     func toggleCameraSelection() {
-        if configuration.cameraPosition == .front {
-            configuration = VideoReader.CameraConfiguration(
-                position: .back,
-                pixelFormat: .bgra32,
-                resolution: .high)
+        if configuration.position == .front {
+            configuration.position = .back
         } else {
-            configuration = VideoReader.CameraConfiguration(
-                position: .front,
-                pixelFormat: .bgra32,
-                resolution: .high)
+            configuration.position = .front
         }
     }
     
