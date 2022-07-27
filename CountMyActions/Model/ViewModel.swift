@@ -166,7 +166,7 @@ class ViewModel: ObservableObject {
     /// Updates the user interface's image view with the rendered poses.
     /// - Parameters:
     ///   - image: The image frame from the camera.
-    ///   - poses: The detected poses to render on-screen.
+    ///   - poses: The detected poses to render onscreen.
     /// - Tag: display
     @MainActor func display(image: CGImage, poses: [Pose]) {
         self.liveCameraImageAndPoses = (image, poses)

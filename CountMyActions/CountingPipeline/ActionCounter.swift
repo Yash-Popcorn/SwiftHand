@@ -14,7 +14,7 @@ struct ActionCounter {
     // incoming frames (that is, effectively speed up the observed actions).
     let pipeline = Downsampler(factor: 1)
 
-    // Use a PoseSelector transformer to choose one pose to count if
+    // Use a PoseSelector transformer to select one pose to count if
     // the system detects multiple poses.
         .appending(PoseSelector(strategy: .maximumBoundingBoxArea))
 
@@ -32,7 +32,7 @@ struct ActionCounter {
 
     /// Count action repetitions from a pose stream.
     /// - Parameters:
-    ///   - poseStream: an asynchronous sequence of poses.
+    ///   - poseStream: An asynchronous sequence of poses.
     /// - Returns: An asynchronous sequence of cumulative action counts.
     /// - Tag: count
     func count(_ poseStream: AnyTemporalSequence<[Pose]>) async throws -> HumanBodyActionCounter.CumulativeSumSequence {
