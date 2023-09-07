@@ -92,26 +92,40 @@ extension Pose {
 extension Pose {
     /// A series of joint pairs that define the wireframe lines of a pose.
     static let jointPairs: [(joint1: JointKey, joint2: JointKey)] = [
-        // The left arm's connections.
-        (.leftShoulder, .leftElbow),
-        (.leftWrist, .leftElbow),
+        // Thumb connections
+                (.wrist, .thumbCMC),
+                (.thumbCMC, .thumbMP),
+                (.thumbMP, .thumbIP),
+                (.thumbIP, .thumbTip),
 
-        // The left leg's connections.
-        (.leftHip, .leftKnee),
-        (.leftAnkle, .leftKnee),
+                // Index finger connections
+                (.wrist, .indexMCP),
+                (.indexMCP, .indexPIP),
+                (.indexPIP, .indexDIP),
+                (.indexDIP, .indexTip),
 
-        // The right arm's connections.
-        (.rightShoulder, .rightElbow),
-        (.rightWrist, .rightElbow),
+                // Middle finger connections
+                (.wrist, .middleMCP),
+                (.middleMCP, .middlePIP),
+                (.middlePIP, .middleDIP),
+                (.middleDIP, .middleTip),
 
-        // The right leg's connections.
-        (.rightHip, .rightKnee),
-        (.rightAnkle, .rightKnee),
+                // Ring finger connections
+                (.wrist, .ringMCP),
+                (.ringMCP, .ringPIP),
+                (.ringPIP, .ringDIP),
+                (.ringDIP, .ringTip),
 
-        // The torso's connections.
-        (.leftShoulder, .rightShoulder),
-        (.leftShoulder, .leftHip),
-        (.rightShoulder, .rightHip),
-        (.leftHip, .rightHip)
+                // Little (previously called pinky) finger connections
+                (.wrist, .littleMCP),
+                (.littleMCP, .littlePIP),
+                (.littlePIP, .littleDIP),
+                (.littleDIP, .littleTip),
+
+                // Connections between fingers (adjacency connections for more structure)
+                (.thumbCMC, .indexMCP),
+                (.indexMCP, .middleMCP),
+                (.middleMCP, .ringMCP),
+                (.ringMCP, .littleMCP),
     ]
 }

@@ -30,7 +30,7 @@ class ViewModel: ObservableObject {
     
     /// A Create ML Components transformer to extract human body poses from a single image or a video frame.
     /// - Tag: poseExtractor
-    private let poseExtractor = HumanBodyPoseExtractor()
+    private let poseExtractor = HumanHandPoseExtractor()
     
     /// The camera configuration to define the basic camera position, pixel format, and resolution to use.
     private var configuration = VideoReader.CameraConfiguration()
