@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         //CameraWithPosesAndOverlaysView()
         Text("OMFG")
+        Text("IDFK")
 
     }
 }
