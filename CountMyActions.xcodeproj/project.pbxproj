@@ -23,6 +23,7 @@
 		50053F84284ACAED00C86BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50053F81284ACAED00C86BF4 /* Assets.xcassets */; };
 		ADB6D0BB2AAC03C3007874FC /* HomePage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */; };
 		ADF9B0272AAC241900660BD6 /* HomePage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9B0262AAC241900660BD6 /* HomePage2.swift */; };
+		ADF9B0292AAC2B7700660BD6 /* DashboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9B0282AAC2B7700660BD6 /* DashboardPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A6748516A40E187B4F8ACFA3 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage1.swift; sourceTree = "<group>"; };
 		ADF9B0262AAC241900660BD6 /* HomePage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage2.swift; sourceTree = "<group>"; };
+		ADF9B0282AAC2B7700660BD6 /* DashboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPage.swift; sourceTree = "<group>"; };
 		F11ED84932036610B96BC234 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				18CA14D1284AC42C00F90372 /* ContentView.swift */,
 				ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */,
 				ADF9B0262AAC241900660BD6 /* HomePage2.swift */,
+				ADF9B0282AAC2B7700660BD6 /* DashboardPage.swift */,
 				06ABE6732AAC2884003780FF /* ListView.swift */,
 			);
 			path = App;
@@ -244,6 +247,7 @@
 				18CA14D4284AC42C00F90372 /* CameraWithPosesAndOverlaysView.swift in Sources */,
 				18CA14DB284AC42C00F90372 /* MyApp.swift in Sources */,
 				18CA14D7284AC42C00F90372 /* Connection.swift in Sources */,
+				ADF9B0292AAC2B7700660BD6 /* DashboardPage.swift in Sources */,
 				18CA14D2284AC42C00F90372 /* ViewModel.swift in Sources */,
 				18CA14D9284AC42C00F90372 /* Pose.swift in Sources */,
 				06ABE6742AAC2884003780FF /* ListView.swift in Sources */,
