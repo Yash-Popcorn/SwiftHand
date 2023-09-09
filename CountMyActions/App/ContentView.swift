@@ -4,7 +4,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // This Color view will fill the entire screen
                 Color("LightBackground").edgesIgnoringSafeArea(.all)
 
                 VStack {
