@@ -7,23 +7,38 @@ The app's overlay view.
 
 import SwiftUI
 
-/// - Tag: OverlayView
 struct OverlayView: View {
 
     let count: Float
     let flip: () -> Void
-
+    let max = 50
+    @State private var isZStackVisible: Bool = true  // <-- 1. Add this state variable
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 VStack {
-                    Text("Count")
-                        .font(.title)
-                        .foregroundColor(.white)
-                    Text("\(count, specifier: "%2.0f")")
-                        .font(.title)
-                        .foregroundColor(.white)
+                    if isZStackVisible {  // <-- 2. Bind the visibility to this state
+                        ZStack {
+                            Circle()
+                                .stroke(
+                                    Color.pink.opacity(0.5),
+                                    lineWidth: 30
+                                )
+                            Circle()
+                                .trim(from: 0, to: CGFloat(count) / CGFloat(max))
+                                .stroke(
+                                    Color.pink,
+                                    style: StrokeStyle(
+                                        lineWidth: 30,
+                                        lineCap: .round
+                                    )
+                                )
+                                .rotationEffect(.degrees(-90))
+                                .animation(.easeOut, value: CGFloat(count) / CGFloat(max))
+                        }
+                    }
                 }
                 Spacer()
             }.bubbleBackground()
@@ -41,10 +56,20 @@ struct OverlayView: View {
                 }
 
                 Spacer()
+                
+                Button {
+                    isZStackVisible.toggle()  // <-- 3. Toggle the state on button click
+                } label: {
+                    Label("Eye", systemImage: "eye.fill")
+                        .foregroundColor(.primary)
+                        .labelStyle(.iconOnly)
+                        .bubbleBackground()
+                }
             }
         }.padding()
     }
 }
+
 
 extension View {
     func bubbleBackground() -> some View {
