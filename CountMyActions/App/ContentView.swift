@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CameraWithPosesAndOverlaysView()
+        //CameraWithPosesAndOverlaysView()
+        Text("EEE")
+        Text("EEE")
+
     }
 }
