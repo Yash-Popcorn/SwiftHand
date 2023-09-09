@@ -12,6 +12,7 @@ struct ContentView: View {
         //CameraWithPosesAndOverlaysView()
         Text("OMFG")
         Text("IDFK")
+        Text("IDFK")
 
     }
 }
