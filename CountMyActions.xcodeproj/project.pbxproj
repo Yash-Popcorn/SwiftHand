@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06ABE6742AAC2884003780FF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ABE6732AAC2884003780FF /* ListView.swift */; };
 		18CA148B284ABF8C00F90372 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 18CA148A284ABF8C00F90372 /* AsyncAlgorithms */; };
 		18CA14D2284AC42C00F90372 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14C3284AC42C00F90372 /* ViewModel.swift */; };
 		18CA14D3284AC42C00F90372 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14C5284AC42C00F90372 /* OverlayView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06ABE6732AAC2884003780FF /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		18CA1477284ABEC600F90372 /* CountMyActions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountMyActions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CA14C3284AC42C00F90372 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		18CA14C5284AC42C00F90372 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				18CA14D1284AC42C00F90372 /* ContentView.swift */,
 				ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */,
 				ADF9B0262AAC241900660BD6 /* HomePage2.swift */,
+				06ABE6732AAC2884003780FF /* ListView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				18CA14D7284AC42C00F90372 /* Connection.swift in Sources */,
 				18CA14D2284AC42C00F90372 /* ViewModel.swift in Sources */,
 				18CA14D9284AC42C00F90372 /* Pose.swift in Sources */,
+				06ABE6742AAC2884003780FF /* ListView.swift in Sources */,
 				18CA14D3284AC42C00F90372 /* OverlayView.swift in Sources */,
 				18CA14D6284AC42C00F90372 /* CameraView.swift in Sources */,
 				18CA14D5284AC42C00F90372 /* PosesView.swift in Sources */,
