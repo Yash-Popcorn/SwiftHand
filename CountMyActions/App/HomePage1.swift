@@ -10,20 +10,32 @@ struct HomePage1: View {
                         .foregroundColor(.blue)
                     Text("Experience")
                 }
-            
 
                 Image("hand")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 200,
-                        height: 200)
+                    .frame(width: 200, height: 200)
+                
+                NavigationLink(destination: HomePage2()) {
+                    Circle()
+                        .frame(width: 60, height: 60)
+                        .foregroundColor(.red)
+                        .overlay(
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.white)
+                        )
+                        .shadow(radius: 4)
+                }
+                .padding(.top, 20)
+                
                 Spacer()
             }
-
         }
-   .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
+
+
 
 struct HomePage1_Previews: PreviewProvider {
     static var previews: some View {
