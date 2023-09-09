@@ -21,7 +21,7 @@ struct HomePage2: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: DashboardPage()) {
+                    NavigationLink(destination: CameraWithPosesAndOverlaysView()) {
                         Circle()
                             .frame(width: 120, height: 120)
                             .foregroundColor(.red)

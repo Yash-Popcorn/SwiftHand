@@ -5,94 +5,111 @@ struct DashboardPage: View {
         
         NavigationView {
             TabView {
-            ZStack {
-                VStack {
-                    Image("background")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                        .opacity(0.5)
-                        .frame(height: 250)
-                    
-                    Spacer()
-                }
-                
-                VStack(alignment: .leading) {
-                    VStack(alignment: .leading) {
-                        Text("Welcome User!")
-                            .font(.title)
+                ZStack {
+                    VStack {
                         
-                        Text("Courses Completed: ")
-                            .font(.headline)
-                        
-                        Text("0")
-                            .font(.title)
-                        
-                        Text("Total letters: ")
-                            .font(.headline)
-                        
-                        Text("0")
-                            .font(.title)
-                        
-                        Text("Total Words")
-                            .font(.headline)
-                        
-                        Text("0")
-                            .font(.title)
-                    }
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    Spacer()
-                    
-                    // Add 2x2 Card Grid
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 10) {
-                        ForEach(0..<4) { index in
-                            CardView(index: index)
+                        ZStack {
+                            Image("background_black")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(height: 430)
+                                .clipShape(RoundedRectangle(cornerRadius: 400)) // Adjust cornerRadius as needed
+                                .opacity(1)
+                                .edgesIgnoringSafeArea(.all)
+
+                            
+                            VStack(alignment: .leading) {
+                                VStack(alignment: .leading) {
+                                    Text("Welcome User!")
+                                        .font(.largeTitle)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Text("Courses Completed: ")
+                                        .font(.title)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Text("0")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.yellow)
+                                    
+                                    Text("Total letters: ")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Text("0")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.yellow)
+                                    
+                                    Text("Total Words")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Text("0")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.yellow)
+                                }
+                            }
+                            .padding(.bottom, 100.0)
+                                                    
                         }
+                        Spacer()
+                        LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 10) {
+                                                    ForEach(0..<4) { index in
+                                                        CardView(index: index)
+                                                    }
+                        }
+                                                
+                        Spacer()
+                        
                     }
-                    .padding()
-                    
-                    Spacer()
                 }
-                .padding()
+                .navigationBarBackButtonHidden(true)
+                .background(Color("LightBackground").edgesIgnoringSafeArea(.all))
+
             }
-            .navigationBarBackButtonHidden(true)
-        }
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                HStack {
-                    
-                    Button(action: {
-                        // Action for Home button
-                    }) {
-                        Image(systemName: "house")
-                            .font(.title)
-                            .foregroundColor(.blue)
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        
+                        Button(action: {
+                            // Action for Home button
+                        }) {
+                            Image(systemName: "house")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                        }
+                        .padding()
+                        
+                        Button(action: {
+                            // Action for Hand button
+                        }) {
+                            Image(systemName: "hand.raised")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                        }
+                        .padding()
+                        
+                        Button(action: {
+                            // Action for Checkmark button
+                        }) {
+                            Image(systemName: "checkmark")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                        }
+                        .padding()
+                        
                     }
-                    .padding()
-                    
-                    Button(action: {
-                        // Action for Hand button
-                    }) {
-                        Image(systemName: "hand.raised")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                    }
-                    .padding()
-                    
-                    Button(action: {
-                        // Action for Checkmark button
-                    }) {
-                        Image(systemName: "checkmark")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                    }
-                    .padding()
-                    
                 }
             }
         }
     }
-}
 }
 
 struct CardView: View {
