@@ -12,6 +12,7 @@ struct ContentView: View {
         //CameraWithPosesAndOverlaysView()
         Text("EEE")
         Text("EEE")
+        Text("EEE")
 
     }
 }
