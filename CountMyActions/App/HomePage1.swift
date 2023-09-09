@@ -20,6 +20,7 @@ struct HomePage1: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 600, height: 500)
+                        .rotationEffect(Angle(degrees: -10.0))
                     
                     NavigationLink(destination: HomePage2()) {
                         Circle()
@@ -28,6 +29,8 @@ struct HomePage1: View {
                             .overlay(
                                 Image(systemName: "arrow.right")
                                     .foregroundColor(.white)
+                                    .font(.system(size: 40)) // Adjust the size as needed
+
                             )
                             .shadow(radius: 4)
                     }
