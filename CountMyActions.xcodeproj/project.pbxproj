@@ -21,6 +21,10 @@
 		18CA14DB284AC42C00F90372 /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14D0284AC42C00F90372 /* MyApp.swift */; };
 		18CA14DC284AC42C00F90372 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14D1284AC42C00F90372 /* ContentView.swift */; };
 		50053F84284ACAED00C86BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50053F81284ACAED00C86BF4 /* Assets.xcassets */; };
+		AD5BB7ED2AAC7C760037C4B1 /* PhrasesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BB7EC2AAC7C760037C4B1 /* PhrasesPage.swift */; };
+		AD5BB7F12AAC7EA90037C4B1 /* LettersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BB7F02AAC7EA90037C4B1 /* LettersPage.swift */; };
+		AD5BB7F32AAC7F360037C4B1 /* DictionaryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BB7F22AAC7F360037C4B1 /* DictionaryPage.swift */; };
+		AD5BB7F52AAC7FED0037C4B1 /* GamesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BB7F42AAC7FED0037C4B1 /* GamesPage.swift */; };
 		ADB6D0BB2AAC03C3007874FC /* HomePage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */; };
 		ADF9B0272AAC241900660BD6 /* HomePage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9B0262AAC241900660BD6 /* HomePage2.swift */; };
 		ADF9B0292AAC2B7700660BD6 /* DashboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9B0282AAC2B7700660BD6 /* DashboardPage.swift */; };
@@ -45,6 +49,10 @@
 		50053F82284ACAED00C86BF4 /* CountMyActions.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = CountMyActions.entitlements; sourceTree = "<group>"; };
 		5269731033A41881895B5A41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A6748516A40E187B4F8ACFA3 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		AD5BB7EC2AAC7C760037C4B1 /* PhrasesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesPage.swift; sourceTree = "<group>"; };
+		AD5BB7F02AAC7EA90037C4B1 /* LettersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersPage.swift; sourceTree = "<group>"; };
+		AD5BB7F22AAC7F360037C4B1 /* DictionaryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPage.swift; sourceTree = "<group>"; };
+		AD5BB7F42AAC7FED0037C4B1 /* GamesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPage.swift; sourceTree = "<group>"; };
 		ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage1.swift; sourceTree = "<group>"; };
 		ADF9B0262AAC241900660BD6 /* HomePage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage2.swift; sourceTree = "<group>"; };
 		ADF9B0282AAC2B7700660BD6 /* DashboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPage.swift; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 				ADB6D0BA2AAC03C3007874FC /* HomePage1.swift */,
 				ADF9B0262AAC241900660BD6 /* HomePage2.swift */,
 				ADF9B0282AAC2B7700660BD6 /* DashboardPage.swift */,
+				AD5BB7F02AAC7EA90037C4B1 /* LettersPage.swift */,
+				AD5BB7EC2AAC7C760037C4B1 /* PhrasesPage.swift */,
+				AD5BB7F22AAC7F360037C4B1 /* DictionaryPage.swift */,
+				AD5BB7F42AAC7FED0037C4B1 /* GamesPage.swift */,
 				06ABE6732AAC2884003780FF /* ListView.swift */,
 			);
 			path = App;
@@ -243,7 +255,9 @@
 				ADF9B0272AAC241900660BD6 /* HomePage2.swift in Sources */,
 				ADB6D0BB2AAC03C3007874FC /* HomePage1.swift in Sources */,
 				18CA14DC284AC42C00F90372 /* ContentView.swift in Sources */,
+				AD5BB7F12AAC7EA90037C4B1 /* LettersPage.swift in Sources */,
 				18CA14D8284AC42C00F90372 /* Joint.swift in Sources */,
+				AD5BB7F32AAC7F360037C4B1 /* DictionaryPage.swift in Sources */,
 				18CA14D4284AC42C00F90372 /* CameraWithPosesAndOverlaysView.swift in Sources */,
 				18CA14DB284AC42C00F90372 /* MyApp.swift in Sources */,
 				18CA14D7284AC42C00F90372 /* Connection.swift in Sources */,
@@ -254,6 +268,8 @@
 				18CA14D3284AC42C00F90372 /* OverlayView.swift in Sources */,
 				18CA14D6284AC42C00F90372 /* CameraView.swift in Sources */,
 				18CA14D5284AC42C00F90372 /* PosesView.swift in Sources */,
+				AD5BB7F52AAC7FED0037C4B1 /* GamesPage.swift in Sources */,
+				AD5BB7ED2AAC7C760037C4B1 /* PhrasesPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
