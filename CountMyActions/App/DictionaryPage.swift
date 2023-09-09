@@ -10,7 +10,10 @@ import SwiftUI
 
 struct DictionaryPage: View {
     var body: some View {
-        Text("Dictionary")
+        Image("asldict")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 500, height: 500)
     }
 }
 

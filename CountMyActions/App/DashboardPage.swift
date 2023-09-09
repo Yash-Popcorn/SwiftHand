@@ -1,7 +1,4 @@
-
 import SwiftUI
-
-// 1. Header Component
 struct Header: View {
     var body: some View {
         Image("background_black")
@@ -14,7 +11,6 @@ struct Header: View {
     }
 }
 
-// 2. StatisticsView Component
 struct StatisticsView: View {
     var title: String
     var value: String
@@ -63,7 +59,6 @@ struct GridCards: View {
     }
 }
 
-// 4. ToolbarButtons Component
 struct ToolbarButtons: View {
     var body: some View {
         HStack {
@@ -91,7 +86,6 @@ struct ToolbarButtons: View {
     }
 }
 
-// Main DashboardPage, now more concise
 struct DashboardPage: View {
     var body: some View {
         NavigationView {
@@ -99,17 +93,20 @@ struct DashboardPage: View {
                 ZStack {
                     VStack {
                         Header()
+                            .padding(.bottom, -400)
+                        
                         VStack(alignment: .leading) {
                             StatisticsView(title: "Welcome User!", value: "", valueColor: .white)
                             StatisticsView(title: "Courses Completed:", value: "0", valueColor: .yellow)
                             StatisticsView(title: "Total letters:", value: "0", valueColor: .yellow)
                             StatisticsView(title: "Total Words", value: "0", valueColor: .yellow)
+                            Spacer()
                         }
-                        .padding(.bottom, 100.0)
                         Spacer()
                         GridCards()
                         Spacer()
                     }
+                
                 }
                 .navigationBarBackButtonHidden(true)
                 .background(Color("LightBackground").edgesIgnoringSafeArea(.all))
@@ -146,3 +143,4 @@ struct DashboardPage_Previews: PreviewProvider {
         DashboardPage()
     }
 }
+
