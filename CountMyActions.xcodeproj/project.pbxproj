@@ -20,6 +20,7 @@
 		18CA14DB284AC42C00F90372 /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14D0284AC42C00F90372 /* MyApp.swift */; };
 		18CA14DC284AC42C00F90372 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14D1284AC42C00F90372 /* ContentView.swift */; };
 		50053F84284ACAED00C86BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50053F81284ACAED00C86BF4 /* Assets.xcassets */; };
+		AD02E2EB2AAC17A300E51F64 /* HomePage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02E2EA2AAC17A300E51F64 /* HomePage1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		50053F82284ACAED00C86BF4 /* CountMyActions.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = CountMyActions.entitlements; sourceTree = "<group>"; };
 		5269731033A41881895B5A41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A6748516A40E187B4F8ACFA3 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		AD02E2EA2AAC17A300E51F64 /* HomePage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage1.swift; sourceTree = "<group>"; };
 		F11ED84932036610B96BC234 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				50053F80284ACAED00C86BF4 /* Info.plist */,
 				18CA14D0284AC42C00F90372 /* MyApp.swift */,
 				18CA14D1284AC42C00F90372 /* ContentView.swift */,
+				AD02E2EA2AAC17A300E51F64 /* HomePage1.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CA14DA284AC42C00F90372 /* ActionCounter.swift in Sources */,
+				AD02E2EB2AAC17A300E51F64 /* HomePage1.swift in Sources */,
 				18CA14DC284AC42C00F90372 /* ContentView.swift in Sources */,
 				18CA14D8284AC42C00F90372 /* Joint.swift in Sources */,
 				18CA14D4284AC42C00F90372 /* CameraWithPosesAndOverlaysView.swift in Sources */,
