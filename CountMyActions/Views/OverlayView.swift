@@ -6,30 +6,48 @@ The app's overlay view.
 */
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct OverlayView: View {
 
     let count: Float
     let flip: () -> Void
     let max = 50
-    @State private var isZStackVisible: Bool = true  // <-- 1. Add this state variable
+    @State private var hasFinished: Bool = false
+    var theString = "A"
+    @State private var isZStackVisible: Bool = true
+    @State private var counter: Int = 0
+
+    func incrementPhrasesValue() {
+        let currentPhrasesValue = UserDefaults.standard.integer(forKey: "Phrases")
+
+        let incrementedValue = currentPhrasesValue + 1
+        UserDefaults.standard.set(incrementedValue, forKey: "Phrases")
+    }
     
+    func incrementLetterValue() {
+        let currentPhrasesValue = UserDefaults.standard.integer(forKey: "Phrases")
+
+        let incrementedValue = currentPhrasesValue + 1
+        UserDefaults.standard.set(incrementedValue, forKey: "Letters")
+    }
+
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                VStack {
-                    if isZStackVisible {  // <-- 2. Bind the visibility to this state
+            if isZStackVisible && !hasFinished {
+                HStack {
+                    Spacer()
+                    HStack(spacing: 40) {
                         ZStack {
                             Circle()
                                 .stroke(
-                                    Color.pink.opacity(0.5),
+                                    Color.green.opacity(0.5),
                                     lineWidth: 30
                                 )
                             Circle()
                                 .trim(from: 0, to: CGFloat(count) / CGFloat(max))
                                 .stroke(
-                                    Color.pink,
+                                    Color.green,
                                     style: StrokeStyle(
                                         lineWidth: 30,
                                         lineCap: .round
@@ -38,11 +56,24 @@ struct OverlayView: View {
                                 .rotationEffect(.degrees(-90))
                                 .animation(.easeOut, value: CGFloat(count) / CGFloat(max))
                         }
+                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        .frame(width: 150, height: 150)
+                        VStack(alignment: .leading) {
+                            Text("Current:")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.black)
+                            Text(theString)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.black)
+                        }
+                        
                     }
+                    Spacer()
                 }
-                Spacer()
-            }.bubbleBackground()
-
+                .bubbleBackground()
+            }
             Spacer()
 
             HStack {
@@ -50,9 +81,12 @@ struct OverlayView: View {
                     flip()
                 } label: {
                     Label("Flip", systemImage: "arrow.triangle.2.circlepath.camera.fill")
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
+                        .font(.system(size: 30)) // Adjust the size as needed
+                        .frame(width: 60, height: 60)
                         .labelStyle(.iconOnly)
                         .bubbleBackground()
+
                 }
 
                 Spacer()
@@ -61,12 +95,32 @@ struct OverlayView: View {
                     isZStackVisible.toggle()  // <-- 3. Toggle the state on button click
                 } label: {
                     Label("Eye", systemImage: "eye.fill")
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
+                        .font(.system(size: 30)) // Adjust the size as needed
+                        .frame(width: 60, height: 60)
                         .labelStyle(.iconOnly)
                         .bubbleBackground()
                 }
             }
-        }.padding()
+        }
+        .onChange(of: count) { newValue in
+            if newValue >= Float(max) {
+                // Your logic here
+                //print("Count has reached or exceeded the max!")
+                if hasFinished == false {
+                    counter += 1
+                    hasFinished = true
+                    if theString.count == 1 {
+                        incrementLetterValue()
+                    } else {
+                        incrementPhrasesValue()
+                    }
+                    
+                }
+            }
+        }
+        .padding()
+        .confettiCannon(counter: $counter)
     }
 }
 
@@ -75,9 +129,8 @@ extension View {
     func bubbleBackground() -> some View {
         self.padding()
             .background {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.primary)
-                    .opacity(0.4)
+                RoundedRectangle(cornerRadius: 16)
+                    .foregroundColor(.white)
             }
     }
 }

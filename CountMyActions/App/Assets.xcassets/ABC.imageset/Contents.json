@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "abc-block 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

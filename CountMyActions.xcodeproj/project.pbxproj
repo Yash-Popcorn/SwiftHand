@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060A7ACF2AAD7C4E006D104D /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 060A7ACE2AAD7C4E006D104D /* ConfettiSwiftUI */; };
 		06ABE6742AAC2884003780FF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ABE6732AAC2884003780FF /* ListView.swift */; };
 		18CA148B284ABF8C00F90372 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 18CA148A284ABF8C00F90372 /* AsyncAlgorithms */; };
 		18CA14D2284AC42C00F90372 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA14C3284AC42C00F90372 /* ViewModel.swift */; };
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060A7ACF2AAD7C4E006D104D /* ConfettiSwiftUI in Frameworks */,
 				18CA148B284ABF8C00F90372 /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +195,7 @@
 			name = CountMyActions;
 			packageProductDependencies = (
 				18CA148A284ABF8C00F90372 /* AsyncAlgorithms */,
+				060A7ACE2AAD7C4E006D104D /* ConfettiSwiftUI */,
 			);
 			productName = CountMyActions;
 			productReference = 18CA1477284ABEC600F90372 /* CountMyActions.app */;
@@ -225,6 +228,7 @@
 			mainGroup = 18CA146E284ABEC600F90372;
 			packageReferences = (
 				18CA1489284ABF8C00F90372 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
+				060A7ACD2AAD7C4E006D104D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 18CA1478284ABEC600F90372 /* Products */;
 			projectDirPath = "";
@@ -401,7 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CountMyActions/App\"";
-				DEVELOPMENT_TEAM = F685X48W72;
+				DEVELOPMENT_TEAM = QGZM2YAM6S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CountMyActions/App/Info.plist;
@@ -482,6 +486,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		060A7ACD2AAD7C4E006D104D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		18CA1489284ABF8C00F90372 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-async-algorithms";
@@ -493,6 +505,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		060A7ACE2AAD7C4E006D104D /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 060A7ACD2AAD7C4E006D104D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		18CA148A284ABF8C00F90372 /* AsyncAlgorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 18CA1489284ABF8C00F90372 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;

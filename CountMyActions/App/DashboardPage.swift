@@ -1,142 +1,141 @@
 import SwiftUI
-struct Header: View {
-    var body: some View {
-        Image("background_black")
-            .resizable()
-            .scaledToFill()
-            .frame(height: 430)
-            .clipShape(RoundedRectangle(cornerRadius: 400))
-            .opacity(1)
-            .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct StatisticsView: View {
-    var title: String
-    var value: String
-    var valueColor: Color
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color.white)
-            
-            Text(value)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(valueColor)
-        }
-    }
-}
-
-// 3. GridCards Component
-struct GridCards: View {
-    var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 10) {
-            ForEach(0..<4) { index in
-                NavigationLink(destination: destinationView(for: index)) {
-                    CardView(index: index)
-                }
-            }
-        }
-    }
-    
-    private func destinationView(for index: Int) -> some View {
-        switch index {
-        case 0:
-            return AnyView(LettersPage())
-        case 1:
-            return AnyView(PhrasesPage())
-        case 2:
-            return AnyView(DictionaryPage())
-        case 3:
-            return AnyView(GamesPage())
-        default:
-            return AnyView(Text(""))
-        }
-    }
-}
-
-struct ToolbarButtons: View {
-    var body: some View {
-        HStack {
-            Button(action: {}) {
-                Image(systemName: "house")
-                    .font(.title)
-                    .foregroundColor(.blue)
-            }
-            .padding()
-            
-            Button(action: {}) {
-                Image(systemName: "hand.raised")
-                    .font(.title)
-                    .foregroundColor(.blue)
-            }
-            .padding()
-            
-            Button(action: {}) {
-                Image(systemName: "checkmark")
-                    .font(.title)
-                    .foregroundColor(.blue)
-            }
-            .padding()
-        }
-    }
-}
 
 struct DashboardPage: View {
     var body: some View {
         NavigationView {
-            TabView {
-                ZStack {
-                    VStack {
-                        Header()
-                            .padding(.bottom, -400)
-                        
-                        VStack(alignment: .leading) {
-                            StatisticsView(title: "Welcome User!", value: "", valueColor: .white)
-                            StatisticsView(title: "Courses Completed:", value: "0", valueColor: .yellow)
-                            StatisticsView(title: "Total letters:", value: "0", valueColor: .yellow)
-                            StatisticsView(title: "Total Words", value: "0", valueColor: .yellow)
-                            Spacer()
+            ZStack {
+                Color(.sRGB, red: 1, green: 1, blue: 1, opacity: 1).edgesIgnoringSafeArea(.all)
+                VStack {
+                    BigStatCard()
+                    Divider()
+                    Text("Dashboard")
+                        .font(.system(size: 40))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(.sRGB, red: 0.2, green: 0.2, blue: 0.2, opacity: 1))
+                        .padding(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            ChildCard(title: "Letters",
+                                      image: "ABC",
+                                      desc: "Learn the ASL alphabets")
+                            ChildCard(title: "Phrases", image: "Phrases", desc: "Learn unique gestures")
+                            ChildCard(title: "Game", image: "Joystick", desc: "Practice by learning a few phrases")
                         }
-                        Spacer()
-                        GridCards()
-                        Spacer()
                     }
-                
+
+                    Spacer()
                 }
-                .navigationBarBackButtonHidden(true)
-                .background(Color("LightBackground").edgesIgnoringSafeArea(.all))
             }
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    ToolbarButtons()
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
+
+struct BigStatCard: View {
+    
+    @State private var lettersValue: Int = 0
+    @State private var phrasesValue: Int = 0
+
+    func fetchValuesFromUserDefaults() {
+        lettersValue = UserDefaults.standard.integer(forKey: "Letters")
+        phrasesValue = UserDefaults.standard.integer(forKey: "Phrases")
+    }
+    
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.sRGB, red: 255/255, green: 202/255, blue: 67/255, opacity: 1))
+                .frame(width: 390, height: 230)
+            
+            Image("Stripes")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 110)
+                .mask(
+                    RoundedRectangle(cornerRadius: 16)
+                )
+            HStack(spacing: 30) {
+                VStack(alignment: .leading) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(.sRGB, red: 0.2, green: 0.2, blue: 0.2, opacity: 1))
+                            .frame(width: 160, height: 55)
+                        Text("Practiced")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.yellow)
+                            .font(.system(size: 20))
+
+                    }
+                    Text("\(lettersValue) letters")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                    Text("\(phrasesValue) phrases")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                }
+                Image("Trophy")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(0.0)
+                    .frame(width: 160, height: 150)
+            }
+            .padding(.all)
+            
+        }
+        .onAppear(perform: fetchValuesFromUserDefaults)
+    }
+}
+
+
+struct ChildCard: View {
+    var title = ""
+    var image = ""
+    var desc = ""
+    var body: some View {
+        NavigationLink(destination: Group {
+            if title == "Phrases" {
+                ListView(isAlphabetic: false)
+            } else if title == "Game" {
+                CameraWithPosesAndOverlaysView()
+            } else {
+                ListView(isAlphabetic: true)
+            }
+        }) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color(.sRGB, red: 1, green: 1, blue: 1, opacity: 1))
+                    .frame(width: 380, height: 190)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(.sRGB, red: 0.85, green: 0.85, blue: 0.85, opacity: 1), lineWidth: 3)
+                    )
+                HStack {
+                    Image(image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(0.0)
+                        .frame(width: 150, height: 140)
+                    VStack(alignment: .leading) {
+                        Text(title)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.sRGB, red: 0.25, green: 0.25, blue: 0.25, opacity: 1))
+                        Text(desc)
+                            .font(.body)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.sRGB, red: 0.25, green: 0.25, blue: 0.25, opacity: 1))
+                            .multilineTextAlignment(.leading)
+                    }
                 }
             }
         }
     }
 }
 
-
-struct CardView: View {
-    var index: Int
-    
-    var body: some View {
-        let cardTitles = ["Letters", "Phrases", "Dictionary", "Games"]
-        
-        RoundedRectangle(cornerRadius: 10)
-            .fill(Color.blue)
-            .frame(height: 100)
-            .overlay(
-                Text(cardTitles[index])
-                    .foregroundColor(.white)
-                    .font(.headline)
-            )
-    }
-}
 
 struct DashboardPage_Previews: PreviewProvider {
     static var previews: some View {

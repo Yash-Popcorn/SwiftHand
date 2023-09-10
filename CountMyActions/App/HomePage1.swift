@@ -4,40 +4,24 @@ struct HomePage1: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("LightBackground").edgesIgnoringSafeArea(.all)
+                Color("LightBlue").edgesIgnoringSafeArea(.all)
                 
-                VStack {
-                    HStack {
-                        Text("Free learning with") +
-                        Text(" Hands-On").foregroundColor(.blue) +
-                        Text(" Experience")
+                GeometryReader { geometry in
+                    VStack {
+                        Text("Free learning with Hands-On experience")
+                            .font(.system(size: min(geometry.size.width * 0.1, 50)))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                            .padding(.bottom, 10)
+                        
+                        Image("handwhite")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: geometry.size.width * 1, height: geometry.size.height * 0.63)
+                        GotItButtonView()
                     }
-                    .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    
-                    Image("hand")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 600, height: 500)
-                        .rotationEffect(Angle(degrees: -10.0))
-                    
-                    NavigationLink(destination: HomePage2()) {
-                        Circle()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.red)
-                            .overlay(
-                                Image(systemName: "arrow.right")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 40)) // Adjust the size as needed
-
-                            )
-                            .shadow(radius: 4)
-                    }
-                    .padding(.top, 20)
-                    
-                    Spacer()
                 }
+
             }
         }
         .navigationBarBackButtonHidden(true)

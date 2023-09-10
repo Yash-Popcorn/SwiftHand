@@ -9,10 +9,11 @@ import SwiftUI
 
 struct CameraWithPosesAndOverlaysView: View {
 
+    var theString = "A"
     @StateObject var viewModel = ViewModel()
 
     var body: some View {
-        OverlayView(count: viewModel.uiCount) {
+        OverlayView(count: viewModel.uiCount, theString: theString) {
             viewModel.onCameraButtonTapped()
         }
         .background {
@@ -27,6 +28,7 @@ struct CameraWithPosesAndOverlaysView: View {
             }
         }
         .onAppear {
+            viewModel.currentAlphabet = theString
             viewModel.initialize()
         }
     }

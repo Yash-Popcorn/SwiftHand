@@ -144,6 +144,7 @@ class ViewModel: ObservableObject {
             if let cgImage = CIContext()
                 .createCGImage(frame.feature, from: frame.feature.extent) {
                 if let firstPose = poses.first {
+                    print(currentAlphabet)
                     if currentAlphabet == "A" {
                         guard
                             let thumbTipLocation = firstPose.keypoints[.thumbTip]?.location,
